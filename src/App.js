@@ -25,14 +25,23 @@ const TextStyles = styled.div`
   margin-left:10px;
 `;
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.experienceDialog = this.experienceDialog.bind(this);
+  }
+  
+  experienceDialog(e){
+  console.log("hi");
+  }
+  render(){
+    return (
     <div>
-      <ExperienceStyles><h1>Experience</h1></ExperienceStyles>
+      <h1>Experience</h1>
       <Wrapper>
         <IconContext.Provider value={{ className: "global-class-name", size: "5em" }}>
           <BatteryStyles>
-            <FaBatteryEmpty /> <TextStyles>0 years</TextStyles>
+            <FaBatteryEmpty /> <TextStyles><button onClick={this.experienceDialog}>0 years</button></TextStyles>
           </BatteryStyles>
           <BatteryStyles>
             <FaBatteryQuarter /> <TextStyles>1 years</TextStyles>
@@ -50,6 +59,7 @@ function App() {
       </Wrapper>
     </div>
   );
+  }
 }
 
 export default App;
