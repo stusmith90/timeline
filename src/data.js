@@ -1,8 +1,4 @@
 export const data = {
-    0: {
-        title: "0 years",
-        description: "I decided to"
-    },
     1: {
         title: "1 years",
         description: "I decided to"
@@ -18,5 +14,5 @@ export const data = {
     4: {
         title: "4 years",
         description: "I decided to"
-    }
+    },
 }
