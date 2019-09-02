@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-import { FaBatteryEmpty, FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaBatteryThreeQuarters } from 'react-icons/fa';
+import { FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaBatteryThreeQuarters } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import styled from 'styled-components';
 import Experience from './components/Experience'
 
 // Create a Wrapper component that'll render a <section> tag with some styles
 const Wrapper = styled.section`
-  padding: 4em;
+  background: papayawhip;
+  display: flex;
+  justify-content: center;
+`;
+
+const MainContent = styled.section`
   background: papayawhip;
   display: flex;
   justify-content: center;
@@ -91,7 +96,9 @@ class App extends React.Component {
             </BatteryStyles>
           </IconContext.Provider>
         </Wrapper>
-        <Experience view={this.state.view} />
+        <MainContent>
+          <Experience view={this.state.view} />
+        </MainContent>
       </div>
     );
   }
